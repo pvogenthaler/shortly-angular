@@ -1,0 +1,15 @@
+<div id='signin' ng-controller='AuthController'>
+  <h1>signin</h1>
+  <form name="signinForm" ng-submit='signinForm.username.$valid && signinForm.password.$valid && signin()'>
+    <input name="username" type='text' ng-model='user.username' ng-minlength="4">
+    <input name="password" type="password" ng-model='user.password' ng-minlength="4">
+    <button>signin</button>
+  </form>
+  <a href="#/signup">Don't have an account? <strong>Signup</strong> ...</a>
+
+  <div>
+    <p ng-if="!signinForm.username.$valid || !signinForm.password.$valid">The user input is not valid. Username and password has to be longer than 4 letters.</p>
+  </div>
+
+</div>
+
